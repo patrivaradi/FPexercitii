@@ -43,13 +43,47 @@ namespace exercitii_vectori
                     }
                 }
         }
+
+        static void getMax()
+        {
+            int aux;
+            int max1 = v[0];
+            int max2 = v[1];
+            int max3 = v[2];
+
+            if (max1 > max2) { aux = max1; max1 = max2; max2 = aux; }
+            if (max1 > max3) { aux = max1; max1 = max3; max3 = aux; }
+            if (max2 > max3) { aux = max2; max2 = max3; max3 = aux; }
+
+            for (int i = 3; i < n; i++)
+            {
+                if (v[i] >= max3)
+                {
+                    max1 = max2;
+                    max2 = max3;
+                    max3 = v[i];
+                }
+                else if (v[i] >= max2)
+                {
+                    max1 = max2;
+                    max2 = v[i];
+                }
+                else if (v[i] >= max1)
+                    max1 = v[i];
+            }
+            Console.WriteLine(max1+" "+max2+" "+max3);
+            int s = max1 + max2 + max3;
+            Console.WriteLine("Suma celor mai mari 3 valori este : "+s);
+
+        }
         static void Main(string[] args)
         {
             read();
             view();
-            ord();
-            view();
-            Console.WriteLine("Suma celor mai mari 3 valori din vector :"v[0]+v[1]+v[2]);
+            //ord();
+            //view();
+            getMax();
+            //Console.WriteLine("Suma celor mai mari 3 valori din vector :"v[0]+v[1]+v[2]);
             Console.ReadKey();
         }
     }
