@@ -49,6 +49,7 @@ namespace exercitii_vectori
             view();
             ord();
             view();
+            Console.WriteLine("Suma celor mai mari 3 valori din vector :"v[0]+v[1]+v[2]);
             Console.ReadKey();
         }
     }
