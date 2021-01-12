@@ -46,7 +46,7 @@ namespace matrix
                 }
                 if (min > max) max = min;
             }
-            Console.WriteLine(max);
+            Console.WriteLine("Cea mai mare valoare din cei mai mici valori pe linii este :",max);
             Console.ReadKey();
         }
 
@@ -75,6 +75,7 @@ namespace matrix
                 }
                 idx++;
             } while (nrp < n * m);
+            Console.WriteLine($"Matricea de {n}*{m} cu numere prime :");
             for (int i = 0; i <n; i++)
             {
                 for (int j = 0; j < m; j++)
@@ -116,6 +117,7 @@ namespace matrix
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("Elementele primului patrat concentric : ");
             for (int i = 0; i < m - 1; i++)
                 Console.Write(A[0,i]+" ");
             for (int i = 0; i < n - 1; i++)
@@ -142,12 +144,12 @@ namespace matrix
                     A[i, j] = k * k;
                     k += 2;
                 }
+            
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
                 {
                     Console.Write(A[i, j]+" ");
-
                 }
                 Console.WriteLine();
             }
